@@ -12,19 +12,16 @@ class BlogController extends BaseController
 {
 	use ResponseTrait;
 
-	public function index()
+	public function list()
 	{
-		
-
 		try {
 			$blog = new BlogModel();
-			$blogs = $blog->get_all();
-
+			$blogs = $blog->list();
 			return $this->getResponse(
 				[
-					'status' => 201,
+					'status' => 200,
 					'error' => true,
-					'message' => 'created',
+					'message' => 'ok',
 					'data' => json_encode($blogs)
 				],
 				ResponseInterface::HTTP_CREATED

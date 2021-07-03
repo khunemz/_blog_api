@@ -11,4 +11,21 @@ class BlogModel extends Model
   protected $createdField  = 'created_at';
   protected $updatedField  = 'updated_at';
   protected $useTimestamps = true;
+
+  public function list_pagination($limit, $offset, $sort, $order, $search) {
+    $db = \Config\Database::connect();
+    $builder = $db->table('blogs')->orderBy($sort, $order)->like('name', $search);
+    $query = $builder->get($limit, $offset);
+    $rows = $query->getResult();
+    return $rows;
+  }
+
+
+  public function list() {
+    $db = \Config\Database::connect();
+    $builder = $db->table('blogs')->orderBy('id', 'desc');
+    $query = $builder->get();
+    $rows = $query->getResult();
+    return $rows;
+  }
 }

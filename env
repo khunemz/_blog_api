@@ -15,7 +15,7 @@
 #--------------------------------------------------------------------
 
 # CI_ENVIRONMENT = production
-
+CI_ENVIRONMENT = development
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
@@ -49,6 +49,7 @@
  database.default.username = superuser
  database.default.password = password
  database.default.DBDriver = MySQLi
+ database.default.port = 8889
  database.default.DBPrefix =
 
 

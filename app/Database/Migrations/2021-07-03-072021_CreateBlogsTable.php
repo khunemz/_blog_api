@@ -18,15 +18,20 @@ class CreateBlogsTable extends Migration
 				'unsigned'				=> true,
 				'auto_increment'	=> true,
 			],
-			'username'					=> [
-				'type'						=> 'VARCHAR',
-				'constraint'			=> 100,
-				'null' 						=> true,
-			],
-			'email'	=> [
+			'title'					=> [
 				'type'						=> 'VARCHAR',
 				'constraint'			=> 100,
 				'null' 						=> false,
+			],
+			'description'	=> [
+				'type'						=> 'VARCHAR',
+				'constraint'			=> 500,
+				'null' 						=> false,
+			],
+			'slug'	=> [
+				'type'						=> 'VARCHAR',
+				'constraint'			=> 100,
+				'null' 						=> true,
 			],
 			'created_at'				=> [
 				'type'						=> 'DATETIME',
