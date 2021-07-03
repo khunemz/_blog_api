@@ -28,4 +28,12 @@ class BlogModel extends Model
     $rows = $query->getResult();
     return $rows;
   }
+
+  public function findById($id) {
+    $db = \Config\Database::connect();
+    $builder = $db->table('blogs')->where('id', $id);
+    $query = $builder->get();
+    $row = $query->getRow();
+    return $row;
+  }
 }

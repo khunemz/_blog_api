@@ -34,6 +34,9 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('blogs/list', 'BlogController::list', ['as' => 'blogs_list']);
+$routes->post('blogs/save', 'BlogController::save', ['as' => 'blogs_save']);
+$routes->put('blogs/update/(:any)', 'BlogController::update/$1', ['as' => 'blogs_update']);
+$routes->delete('blogs/delete/(:any)', 'BlogController::delete/$1', ['as' => 'blogs_delete']);
 
 // $routes->group('blogs', function($route) {
 // 	$route->get('/list', 'BlogController::list', ['as' => 'blogs_list']);
