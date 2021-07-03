@@ -17,13 +17,7 @@ class BlogController extends BaseController
 		try {
 			$blog = new BlogModel();
 			$blogs = $blog->list();
-			return $this->getResponse(
-				[
-					'status' => 200,
-					'error' => false,
-					'message' => 'ok',
-					'data' => json_encode($blogs)
-				],
+			return $this->getResponse($blogs,
 				ResponseInterface::HTTP_CREATED
 			);
 		} catch (Exception $ex) {
